@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3030;
 
 const fruits = [
   "apple", "apricot", "banana", "blackberry", "blackcurrant", "blueberry", "currant",
@@ -30,6 +30,6 @@ app.get('/fruit', (req, res) => {
     return res.json({ fruit });
   }
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

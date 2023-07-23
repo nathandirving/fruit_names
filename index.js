@@ -22,14 +22,6 @@ app.get('/fruit', (req, res) => {
   res.json({ fruit });
 });
 
-app.get('/fruit', (req, res) => {
-  const index = parseInt(req.query.index);
-  if (isNaN(index) || index < 0 || index >= fruits.length) {
-	const random_index = Math.floor(Math.random() * fruits.length);
-	const fruit = fruits[random_index];
-    return res.json({ fruit });
-  }
-
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`server started on port ${PORT}`);
 });

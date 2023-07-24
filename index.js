@@ -11,7 +11,8 @@ const fruits = [
   "strawberry", "tangerine"
 ];
 
-const movies = ["The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction",
+const movies = [
+  "The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction",
   "Schindler's List", "The Lord of the Rings: The Return of the King", "Forrest Gump", "Inception",
   "The Matrix", "Star Wars: Episode IV - A New Hope", "The Lord of the Rings: The Fellowship of the Ring",
   "The Godfather: Part II", "The Dark Knight Rises", "Interstellar", "Fight Club", "Goodfellas",
@@ -39,7 +40,7 @@ app.get('/fruit', (req, res) => {
 app.get('/', (req, res) => {
   const random_index = Math.floor(Math.random() * movies.length);
   const movie = movies[index];
-  res.send(movie);
+  res.json({ movie });
 });
 
 app.listen(PORT, () => {

@@ -11,6 +11,20 @@ const fruits = [
   "strawberry", "tangerine"
 ];
 
+const movies = ["The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction",
+  "Schindler's List", "The Lord of the Rings: The Return of the King", "Forrest Gump", "Inception",
+  "The Matrix", "Star Wars: Episode IV - A New Hope", "The Lord of the Rings: The Fellowship of the Ring",
+  "The Godfather: Part II", "The Dark Knight Rises", "Interstellar", "Fight Club", "Goodfellas",
+  "The Lord of the Rings: The Two Towers", "The Silence of the Lambs", "The Green Mile", "Seven",
+  "Gladiator", "The Departed", "Saving Private Ryan", "Avatar", "The Avengers", "The Lion King",
+  "Inglourious Basterds", "The Prestige", "Django Unchained", "The Usual Suspects", "The Terminator",
+  "The Empire Strikes Back", "The Sixth Sense", "Back to the Future", "Alien", "The Godfather: Part III",
+  "The Grand Budapest Hotel", "Casablanca", "The Good, the Bad and the Ugly", "One Flew Over the Cuckoo's Nest",
+  "The Shining", "The Breakfast Club", "Eternal Sunshine of the Spotless Mind", "No Country for Old Men", "Amélie",
+  "The Social Network", "Raiders of the Lost Ark", "The Wizard of Oz", "Jurassic Park", "Titanic", "Gone with the Wind",
+  "Shrek", "Harry Potter and the Sorcerer's Stone"
+];
+
 app.get('/fruit', (req, res) => {
   const index = parseInt(req.query.index);
   if (isNaN(index) || index < 0 || index >= fruits.length) {
@@ -20,6 +34,12 @@ app.get('/fruit', (req, res) => {
   }
   const fruit = fruits[index];
   res.json({ fruit });
+});
+
+app.get('/', (req, res) => {
+  const random_index = Math.floor(Math.random() * movies.length);
+  const movie = movies[index];
+  res.send(movie);
 });
 
 app.listen(PORT, () => {

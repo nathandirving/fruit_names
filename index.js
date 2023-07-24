@@ -13,17 +13,17 @@ const fruits = [
 
 const movies = [
   "The Shawshank Redemption", "The Godfather", "The Dark Knight", "Pulp Fiction",
-  "Schindler's List", "The Lord of the Rings: The Return of the King", "Forrest Gump", "Inception",
+  "The Lord of the Rings: The Return of the King", "Forrest Gump", "Inception",
   "The Matrix", "Star Wars: Episode IV - A New Hope", "The Lord of the Rings: The Fellowship of the Ring",
   "The Godfather: Part II", "The Dark Knight Rises", "Interstellar", "Fight Club", "Goodfellas",
   "The Lord of the Rings: The Two Towers", "The Silence of the Lambs", "The Green Mile", "Seven",
   "Gladiator", "The Departed", "Saving Private Ryan", "Avatar", "The Avengers", "The Lion King",
   "Inglourious Basterds", "The Prestige", "Django Unchained", "The Usual Suspects", "The Terminator",
   "The Empire Strikes Back", "The Sixth Sense", "Back to the Future", "Alien", "The Godfather: Part III",
-  "The Grand Budapest Hotel", "Casablanca", "The Good, the Bad and the Ugly", "One Flew Over the Cuckoo's Nest",
-  "The Shining", "The Breakfast Club", "Eternal Sunshine of the Spotless Mind", "No Country for Old Men", "Amélie",
+  "The Grand Budapest Hotel", "Casablanca", "The Good, the Bad and the Ugly", "The Shining",
+  "The Breakfast Club", "Eternal Sunshine of the Spotless Mind", "No Country for Old Men",
   "The Social Network", "Raiders of the Lost Ark", "The Wizard of Oz", "Jurassic Park", "Titanic", "Gone with the Wind",
-  "Shrek", "Harry Potter and the Sorcerer's Stone"
+  "Shrek"
 ];
 
 app.get('/fruit', (req, res) => {
@@ -38,9 +38,9 @@ app.get('/fruit', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  const random_index = Math.floor(Math.random() * movies.length);
+  const index = Math.floor(Math.random() * movies.length);
   const movie = movies[index];
-  res.json({ movie });
+  res.send(movie);
 });
 
 app.listen(PORT, () => {

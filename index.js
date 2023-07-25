@@ -26,7 +26,7 @@ const movies = [
   "Shrek"
 ];
 
-app.get('/fruit', (req, res) => {
+app.get('/', (req, res) => {
   const index = parseInt(req.query.index);
   if (isNaN(index) || index < 0 || index >= fruits.length) {
 	const random_index = Math.floor(Math.random() * fruits.length);
@@ -37,7 +37,7 @@ app.get('/fruit', (req, res) => {
   res.json({ fruit });
 });
 
-app.get('/', (req, res) => {
+app.get('/movie', (req, res) => {
   const index = Math.floor(Math.random() * movies.length);
   const movie = movies[index];
   res.send(movie);
